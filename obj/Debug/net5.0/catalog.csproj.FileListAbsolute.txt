@@ -27,3 +27,15 @@ C:\Users\Rebwa\Desktop\DotNet Samples\catalog\obj\Debug\net5.0\catalog.dll
 C:\Users\Rebwa\Desktop\DotNet Samples\catalog\obj\Debug\net5.0\ref\catalog.dll
 C:\Users\Rebwa\Desktop\DotNet Samples\catalog\obj\Debug\net5.0\catalog.pdb
 C:\Users\Rebwa\Desktop\DotNet Samples\catalog\obj\Debug\net5.0\catalog.genruntimeconfig.cache
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\DnsClient.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Rebwa\Desktop\DotNet Samples\catalog\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
