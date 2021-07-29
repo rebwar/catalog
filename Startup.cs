@@ -40,7 +40,7 @@ namespace catalog
                 var settings = Configuration.GetSection(nameof(MongoDbConfigs)).Get<MongoDbConfigs>();
                 return new MongoClient(settings.ConnectionString);
             });
-            services.AddSingleton<IItemRepository, InMemoryItemRepository>();
+            services.AddSingleton<IItemRepository, MongoDbItemRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
