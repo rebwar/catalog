@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rebwa\\desktop\\DotNet Samples\\catalog\\catalog.csproj": {}
+    "C:\\Users\\Rebwa\\Desktop\\DotNet Samples\\catalog\\catalog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rebwa\\desktop\\DotNet Samples\\catalog\\catalog.csproj": {
+    "C:\\Users\\Rebwa\\Desktop\\DotNet Samples\\catalog\\catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rebwa\\desktop\\DotNet Samples\\catalog\\catalog.csproj",
+        "projectUniqueName": "C:\\Users\\Rebwa\\Desktop\\DotNet Samples\\catalog\\catalog.csproj",
         "projectName": "catalog",
-        "projectPath": "C:\\Users\\Rebwa\\desktop\\DotNet Samples\\catalog\\catalog.csproj",
+        "projectPath": "C:\\Users\\Rebwa\\Desktop\\DotNet Samples\\catalog\\catalog.csproj",
         "packagesPath": "C:\\Users\\Rebwa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rebwa\\desktop\\DotNet Samples\\catalog\\obj\\",
+        "outputPath": "C:\\Users\\Rebwa\\Desktop\\DotNet Samples\\catalog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rebwa\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using catalog.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,7 @@ namespace catalog
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddSingleton<IItemRepository, InMemoryItemRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
