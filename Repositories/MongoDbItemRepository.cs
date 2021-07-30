@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using catalog.Entities;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -8,42 +9,44 @@ namespace catalog.Repositories
 {
     public class MongoDbItemRepository : IItemRepository
     {
-        private const string databaseName="Catalog";
-        private const string collectionName="items";
+        private const string databaseName = "Catalog";
+        private const string collectionName = "items";
         private readonly IMongoCollection<Item> itemsCollection;
-        private readonly FilterDefinitionBuilder<Item> filterBuilder=Builders<Item>.Filter;
+        private readonly FilterDefinitionBuilder<Item> filterBuilder = Builders<Item>.Filter;
 
         public MongoDbItemRepository(IMongoClient mongoClient)
         {
-            IMongoDatabase database=mongoClient.GetDatabase(databaseName);
-            itemsCollection=database.GetCollection<Item>(collectionName);
-            
+            IMongoDatabase database = mongoClient.GetDatabase(databaseName);
+            itemsCollection = database.GetCollection<Item>(collectionName);
+
         }
-        public void CreateItem(Item item)
+        public async Task CreateItemAsync(Item item)
         {
-            itemsCollection.InsertOne(item);
+            await itemsCollection.InsertOneAsync(item);
         }
 
-        public void DeleteItem(Guid id)
+        public async Task DeleteItemAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var filter = filterBuilder.Eq(item => item.Id, id);
+            await itemsCollection.DeleteOneAsync(filter);
         }
 
-        public void EditItem(Item item)
+        public async Task EditItemAsync(Item item)
         {
-            throw new NotImplementedException();
+            var filter = filterBuilder.Eq(c => c.Id, item.Id);
+           await itemsCollection.ReplaceOneAsync(filter, item);
         }
 
-        public Item GetItem(Guid id)
+        public async Task<Item> GetItemAsync(Guid id)
         {
-            var filter=filterBuilder.Eq(item=>item.Id,id);
-           
-            return itemsCollection.Find(filter).SingleOrDefault();
+            var filter = filterBuilder.Eq(item => item.Id, id);
+
+            return  await itemsCollection.Find(filter).SingleOrDefaultAsync();
         }
 
-        public IEnumerable<Item> GetItems()
+        public async Task<IEnumerable<Item>> GetItemsAsync()
         {
-            return itemsCollection.Find(new BsonDocument()).ToList();
+            return await itemsCollection.Find(new BsonDocument()).ToListAsync();
         }
     }
 }
