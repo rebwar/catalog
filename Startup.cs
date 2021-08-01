@@ -34,18 +34,22 @@ namespace catalog
         {
             BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
             BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
-
+            var mongoDbSettings = Configuration.GetSection(nameof(MongoDbConfigs)).Get<MongoDbConfigs>();
             services.AddSingleton<IMongoClient>(serviceProvider =>
             {
-                var settings = Configuration.GetSection(nameof(MongoDbConfigs)).Get<MongoDbConfigs>();
-                return new MongoClient(settings.ConnectionString);
+
+                return new MongoClient(mongoDbSettings.ConnectionString);
             });
+
+
             services.AddSingleton<IItemRepository, MongoDbItemRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "catalog", Version = "v1" });
             });
+
+            services.AddHealthChecks().AddMongoDb(mongoDbSettings.ConnectionString,name:"mongodb",timeout:TimeSpan.FromSeconds(3));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +71,7 @@ namespace catalog
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("health");
             });
         }
     }
